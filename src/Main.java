@@ -7,22 +7,27 @@ public class Main {
 
 
         String trash = "";
-        int Celsius = 0;
         double input = 0;
         double Fahrenheit = 0;
+
         System.out.print("Enter your temperature in celsius: ");
-        input = in.nextInt();
-        Fahrenheit = (input * 1.8) + 32;
 
-        System.out.println("Your temperature is " + Fahrenheit);
+        if (in.hasNextDouble()) {
+            input = in.nextDouble();
+            in.nextLine();
+            Fahrenheit = (input * 1.8) + 32;
 
-        if (Fahrenheit >= 212)
-        System.out.println("Your temperature has reached a boiling point!");
-        if (Fahrenheit <= 32)
-        System.out.println("Your temperature has reached a freezing point!");
-    else
-        trash = in.nextLine();
-        System.out.println(trash + "is not a valid temperature");
+            System.out.println("Your temperature is " + Fahrenheit);
 
+            if (Fahrenheit >= 212)
+                System.out.println("Your temperature has reached a boiling point!");
+            if (Fahrenheit <= 32)
+                System.out.println("Your temperature has reached a freezing point!");
+        } else
+        {
+            trash = in.nextLine();
+            System.out.println(trash + " is not a number!");
+
+        }
     }
 }
